@@ -53,7 +53,7 @@ function Homepage({ currentUser, replies, comments }) {
 
 export default Homepage;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const comments = await axios({
     url: `${process.env.BACKEND_URL}/com`,
     method: "GET",

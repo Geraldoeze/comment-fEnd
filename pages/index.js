@@ -27,27 +27,27 @@ function Homepage({ currentUser, replies, comments }) {
   console.log(comments, currentUser, replies)
   
   return (
-  <div>baller</div>
-    // <PostContext.Provider value={{ comment, setComment, replys, setReplys }}>
-    //    <div>
-    //      <Modal show={showModal}>
-    //        {" "}
-    //        <LoadingSpinner />
-    //      </Modal>
-    //      {!!comments && (
-    //        <CommentList
-    //          show={openModal}
-    //          onClose={hideModal}
-    //          creator={currentUser}
-    //        />
-    //       )}
-    //      <PostComment
-    //        show={openModal}
-    //        onClose={hideModal}
-    //        creator={currentUser}
-    //      />
-    //    </div>
-    // </PostContext.Provider>
+  
+    <PostContext.Provider value={{ comment, setComment, replys, setReplys }}>
+       <div>
+         <Modal show={showModal}>
+           {" "}
+           <LoadingSpinner />
+         </Modal>
+         {!!comments && (
+           <CommentList
+             show={openModal}
+             onClose={hideModal}
+             creator={currentUser}
+           />
+          )}
+         <PostComment
+           show={openModal}
+           onClose={hideModal}
+           creator={currentUser}
+         />
+       </div>
+    </PostContext.Provider>
   );
 }
 
@@ -71,8 +71,8 @@ export async function getServerSideProps() {
   return {
     props: {
       comments: resultComment,
-      replies: resultCreator,
-      currentUser: resultReply
+      replies: resultReply,
+      currentUser: resultCreator
     },
   };
 }

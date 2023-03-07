@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 
 import { PostContext } from "../hook/context-hook";
-import axios from "axios";
+
 import CommentList from "../component/comments/CommentsList";
 import "../styles/home.module.css";
 import "@fontsource/rubik";
@@ -24,50 +24,55 @@ function Homepage({ currentUser, replies, comments }) {
 
   const [comment, setComment] = useState(comments);
   const [replys, setReplys] = useState(replies);
-  
+  console.log(comments, currentUser, replies)
   
   return (
-  
-    <PostContext.Provider value={{ comment, setComment, replys, setReplys }}>
-       <div>
-         <Modal show={showModal}>
-           {" "}
-           <LoadingSpinner />
-         </Modal>
-         {!!comments && (
-           <CommentList
-             show={openModal}
-             onClose={hideModal}
-             creator={currentUser}
-           />
-          )}
-         <PostComment
-           show={openModal}
-           onClose={hideModal}
-           creator={currentUser}
-         />
-       </div>
-    </PostContext.Provider>
+  <div>baller</div>
+    // <PostContext.Provider value={{ comment, setComment, replys, setReplys }}>
+    //    <div>
+    //      <Modal show={showModal}>
+    //        {" "}
+    //        <LoadingSpinner />
+    //      </Modal>
+    //      {!!comments && (
+    //        <CommentList
+    //          show={openModal}
+    //          onClose={hideModal}
+    //          creator={currentUser}
+    //        />
+    //       )}
+    //      <PostComment
+    //        show={openModal}
+    //        onClose={hideModal}
+    //        creator={currentUser}
+    //      />
+    //    </div>
+    // </PostContext.Provider>
   );
 }
 
 export default Homepage;
 
 export async function getServerSideProps() {
-  const comments = await axios({
-    url: `${process.env.BACKEND_URL}/com`,
+  const comments = await fetch(`${process.env.BACKEND_URL}/com`,{
     method: "GET",
   });
-  const creator = await axios({ url: process.env.BACKEND_URL, method: "GET" });
-  const replies = await axios({
-    url: `${process.env.BACKEND_URL}/rep`,
+  const com = await comments.json()
+  const creator = await fetch(process.env.BACKEND_URL,{ method: "GET" });
+  const create = await creator.json()
+  const replies = await fetch(`${process.env.BACKEND_URL}/rep`,{
     method: "GET",
   });
+  
+  const rep = await replies.json()
+  const resultComment = com.response
+  const resultCreator = create.response
+  const resultReply = rep.response
   return {
     props: {
-      comments: comments?.data?.response,
-      replies: replies?.data?.response,
-      currentUser: creator?.data?.response,
+      comments: resultComment,
+      replies: resultCreator,
+      currentUser: resultReply
     },
   };
 }

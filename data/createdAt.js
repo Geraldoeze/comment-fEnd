@@ -9,7 +9,6 @@ import ReactTimeAgo from 'react-time-ago'
 
 TimeAgo.addLocale(en)
 export function createdAT(number) {
-
     return (
     <div>
         <ReactTimeAgo date={number} locale='en-US' />

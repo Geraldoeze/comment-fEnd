@@ -17,7 +17,7 @@ const BigHeading = ({
   const imageSrc = headData.image.png;
   // This removes the dot ./ so that next can access the image from public folder
   const imageContent = imageSrc.slice(1, imageSrc.length);
-  // const TimeStamp = createdAT(create);
+  const TimeStamp = createdAT(create);
   
   return (
     <div className={classes.BigHeading}>
@@ -26,7 +26,7 @@ const BigHeading = ({
       {currentUser[0].username === headData.username && (
         <span className={style.Bigcreator_span}>you</span>
       )}
-      {/* <div className={style.Bigheading_time}>{TimeStamp}</div> */}
+      <div className={style.Bigheading_time}>{TimeStamp}</div>
 
       <BigIcon
         openButton={showButton}

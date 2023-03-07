@@ -170,7 +170,7 @@ const CommentForm = ({
       createdAt: Date.now(),
       score: 0,
       user: creator[0],
-      replyingTo: replyTo,
+      replyingTo: replyTo,S
     };
 
     const newValue = { ...replyBody };

@@ -19,8 +19,10 @@ const PostComment = ({ creator }) => {
 
   const { sendRequest, isLoading } = useHttpClient();
 
+  
   const UserDetails = creator[0];
   const imageSrc = UserDetails?.image.png;
+  
 
   // This removes the dot ./ so that next can access the image from public folder
   const imageContent = imageSrc?.slice(1, imageSrc.length);

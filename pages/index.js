@@ -24,7 +24,7 @@ function Homepage({ currentUser, replies, comments }) {
 
   const [comment, setComment] = useState(comments);
   const [replys, setReplys] = useState(replies);
-  console.log(comments, currentUser, replies)
+  
   
   return (
   

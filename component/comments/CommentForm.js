@@ -83,8 +83,12 @@ const CommentForm = ({
     };
 
     const newValue = { ...replyBody };
-    getNewReply(newValue);
-    SendPostReplies(replyBody);
+    
+    if (valuelen.length >= 2) {
+      getNewReply(newValue);
+      SendPostReplies(replyBody);
+    }
+    
     openButton(null);
     onClose();
   };
@@ -112,8 +116,9 @@ const CommentForm = ({
           content: updateCommentValue,
           createdAt: Date.now(),
         };
-        getEditContent(UpdatedBody)
-        if (updateCommentValue?.length >= 3) {
+        
+        if (updateCommentValue?.length >= 2) {
+          getEditContent(UpdatedBody)
           SendUpdateComments(UpdatedBody)
         }
       }
@@ -136,9 +141,10 @@ const CommentForm = ({
           content: updateValue,
           createdAt: Date.now(),
         };
-        getUpdateReply(UpdatedBody)
+        
 
-        if (updateValue?.length >= 3) {
+        if (updateValue?.length >= 2) {
+          getUpdateReply(UpdatedBody)
           SendUpdateReplies(UpdatedBody)
         }
       } else if (typeof creatorId?.replies === "string") {
@@ -148,8 +154,9 @@ const CommentForm = ({
           content: updateCommentValue,
           createdAt: Date.now(),
         };
-        getEditContent(UpdatedBody)
-        if (updateCommentValue?.length >= 3) {
+        
+        if (updateCommentValue?.length >= 2) {
+          getEditContent(UpdatedBody)
           SendUpdateComments(UpdatedBody)
         }
       }
@@ -174,8 +181,10 @@ const CommentForm = ({
     };
 
     const newValue = { ...replyBody };
+    if (valuelen?.length >= 2) {
     getNewReply(newValue);
     SendPostReplies(replyBody);
+    }
     openButton(null);
     onClose();
   };

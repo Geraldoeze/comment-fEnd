@@ -22,6 +22,7 @@
     padding: 4px;
     color: var(--color-grayish-blue);
     font-weight: 400;
+    overflow: hidden;
 }
 
 

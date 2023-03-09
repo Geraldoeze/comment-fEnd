@@ -30,10 +30,10 @@ function Homepage({ currentUser, replies, comments }) {
   
     <PostContext.Provider value={{ comment, setComment, replys, setReplys }}>
        <div>
-         <Modal show={showModal}>
+         {/* <Modal show={showModal}>
            {" "}
            <LoadingSpinner />
-         </Modal>
+         </Modal> */}
          {!!comments && (
            <CommentList
              show={openModal}

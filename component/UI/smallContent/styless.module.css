@@ -18,11 +18,11 @@
     
 }
 .heading_time {
-    margin: 0 0.5rem;
-    padding: 4px;
+    margin: 0 0.2rem;
+    padding: 2px;
     color: var(--color-grayish-blue);
     font-weight: 400;
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 
@@ -32,6 +32,7 @@
     width: 2.5rem;
     color: var(--color-white);
     text-align: center;
+    margin: auto;
     padding: 4px;
     border-radius: 2px;
     font-weight: 500;

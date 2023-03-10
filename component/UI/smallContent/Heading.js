@@ -11,7 +11,9 @@ const Heading = ({ currentUser, create, headData }) => {
   
   return (
     <div className={classes.heading}>
-      <Image src={imageContent} width={"30px"} height={"30px"} alt="vero" />
+      <div>
+      <Image src={imageContent} width={"40px"} height={"40px"} alt="vero" />
+      </div>
       <h4 className={classes.heading_name}>{headData.username}</h4>
       {currentUser[0].username === headData.username && (
         <span className={classes.creator_span}>you</span>

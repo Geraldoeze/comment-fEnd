@@ -31,11 +31,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./comment.jpg)
+![Screenshot](./public/images/comment-img.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Site](https://comment-f-end.vercel.app/)
 
 ## My process
 
@@ -106,9 +106,9 @@ I didn't fully utilized Next.js server side functions, hopefully with more pract
 
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
- npm react-time-ago
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+
+- [React Time Ago](https://www.npmjs.com/package/react-time-ago) - This helped me for with the timastamp. I really liked the format and will use it going forward.
+
 
 ## Author
 

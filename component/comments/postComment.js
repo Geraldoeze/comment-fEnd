@@ -1,6 +1,6 @@
 import classes from "./CommentForm.module.css";
 import Image from "next/image";
-import axios from "axios";
+
 import React, { useState, useContext } from "react";
 import { useHttpClient } from "../../hook/http-hook";
 import { PostContext } from "../../hook/context-hook";
